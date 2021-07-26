@@ -42,7 +42,7 @@
 			const draco = new DRACOLoader();
 			draco.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
 			gltfloader.setDRACOLoader(draco);
-			gltfloader.setPath('assets/obj4/');
+			gltfloader.setPath('https://cdn.jsdelivr.net/gh/hua1995116/360-sneakers-viewer/assets/obj4/');
 			gltfloader.load('er4-1.glb', function (gltf) {
 				gltf.scene.scale.set(0.2, 0.2, 0.2); //设置缩放
 				gltf.scene.rotation.set(-Math.PI / 2, 0, 0) // 设置角度
