@@ -9,4 +9,4 @@
 3.模型
 4.实例展示
 
-在线地址: 
+在线地址:  https://resume.mdedit.online/erke/
