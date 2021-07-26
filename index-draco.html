@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>three.js webgl - glTF 2.0 - variants</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r130/examples/main.css">
+</head>
+
+<body>
+	<script type="module">
+
+		import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.129.0/build/three.module.js';
+
+		import { OrbitControls } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@r130/examples/jsm/controls/OrbitControls.js';
+		import { GLTFLoader } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@r130/examples/jsm/loaders/GLTFLoader.js';
+		import { DRACOLoader } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@r130/examples/jsm/loaders/DRACOLoader.js'
+
+		let camera, scene, renderer;
+
+		init();
+		render();
+
+		function init() {
+			const container = document.createElement('div');
+			document.body.appendChild(container);
+			// 设置一个透视摄像机
+			camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 1000);
+			// 设置相机的位置
+			camera.position.set(0, 1.5, -30.0);
+
+			scene = new THREE.Scene();
+			setTimeout(() => {
+				// 设置灯光
+				const directionalLight = new THREE.AmbientLight(0xffffff, 4);
+				scene.add(directionalLight);
+				directionalLight.position.set(2, 5, 5);
+			}, 3000);
+			// 加载模型
+			const gltfloader = new GLTFLoader();
+			const draco = new DRACOLoader();
+			draco.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+			gltfloader.setDRACOLoader(draco);
+			gltfloader.setPath('assets/obj4/');
+			gltfloader.load('er4-1.glb', function (gltf) {
+				gltf.scene.scale.set(0.2, 0.2, 0.2); //设置缩放
+				gltf.scene.rotation.set(-Math.PI / 2, 0, 0) // 设置角度
+				const Orbit = new THREE.Object3D();
+				Orbit.add(gltf.scene);
+				Orbit.rotation.set(0, Math.PI / 2, 0);
+
+				scene.add(Orbit);
+				render();
+			});
+
+
+			renderer = new THREE.WebGLRenderer({ antialias: true });
+			renderer.setPixelRatio(window.devicePixelRatio);
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			container.appendChild(renderer.domElement);
+
+			const controls = new OrbitControls(camera, renderer.domElement);
+			controls.addEventListener('change', render);
+			controls.minDistance = 2; // 限制距离
+			controls.maxDistance = 10; 
+			controls.target.set(0, 0, 0);  // 旋转中心点
+
+			controls.minPolarAngle = 0.3 // 设置最小旋转角度
+			controls.maxPolarAngle = Math.PI / 2 - Math.PI / 10
+
+			controls.update();
+
+			window.addEventListener('resize', onWindowResize);
+
+		}
+
+		function onWindowResize() {
+			// 重新渲染
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+
+			renderer.setSize(window.innerWidth, window.innerHeight);
+
+			render();
+
+		}
+
+		function render() {
+
+			renderer.render(scene, camera);
+
+		}
+
+	</script>
+
+</body>
+
+</html>
