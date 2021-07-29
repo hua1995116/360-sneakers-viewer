@@ -1,5 +1,7 @@
 # 鸿星尔克720°全景看鞋展厅
 
+<img src="https://s3.qiufengh.com/blog/5DH8C8VQR$WPLPHK9JH6.png" width="400px">
+
 模型拍摄设备: iphone 12 mini
 
 该仓库主要分为
