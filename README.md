@@ -1,6 +1,6 @@
 # 鸿星尔克720°全景看鞋展厅
 
-<img src="https://s3.qiufengh.com/blog/5DH8C8VQR$WPLPHK9JH6.png" width="400px">
+<img src="https://s3.qiufeng.blue/blog/5DH8C8VQR$WPLPHK9JH6.png" width="400px">
 
 模型拍摄设备: iphone 12 mini
 
@@ -20,3 +20,5 @@
 训练照片地址: https://docs.qq.com/doc/DZkxzcU53dXF2VWxT
 
 作者微信: qiufengblue(加我请备注来意，例如"讨论模型相关")
+
+<img src="https://s3.qiufeng.blue/blog/WechatIMG313.jpeg" style="width:300px"/>
