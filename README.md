@@ -21,4 +21,4 @@
 
 作者微信: qiufengblue(加我请备注来意，例如"讨论模型相关")
 
-<img src="https://s3.qiufeng.blue/blog/WechatIMG313.jpeg" style="width:300px"/>
+<img src="https://s3.qiufeng.blue/blog/WechatIMG313.jpeg" width="400px" />
