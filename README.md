@@ -11,7 +11,7 @@
 3.模型
 4.实例展示
 
-在线地址:  [https://resume.mdedit.online/erke/](https://resume.mdedit.online/erke/)
+在线地址:  [https://www.mujicv.com/erke/](https://www.mujicv.com/erke/)
 
 配套文章: [我给鸿星尔克写了一个720°全景看鞋展厅](https://mp.weixin.qq.com/s/C10RA23DPjRHaNSu0Q8w1w)
 
